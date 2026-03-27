@@ -1,6 +1,7 @@
 // components/nav/NavOverlay.tsx
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
@@ -36,10 +37,32 @@ interface Props {
 }
 
 export function NavOverlay({ isOpen, onClose }: Props) {
+  const navRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    // Move focus to first link when overlay opens
+    const firstLink = navRef.current?.querySelector<HTMLAnchorElement>('a')
+    firstLink?.focus()
+
+    // Escape key closes overlay
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, onClose])
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation"
+          id="nav-overlay"
           className="fixed inset-0 z-40 flex items-center justify-center"
           style={{
             background: 'rgba(5, 5, 16, 0.92)',
@@ -52,10 +75,9 @@ export function NavOverlay({ isOpen, onClose }: Props) {
           exit="exit"
         >
           <motion.nav
+            ref={navRef}
             variants={listVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            aria-label="Main navigation"
             className="flex flex-col items-center gap-8 md:gap-10"
           >
             {NAV_LINKS.map(link => (
@@ -63,7 +85,7 @@ export function NavOverlay({ isOpen, onClose }: Props) {
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="font-clash font-semibold text-5xl md:text-7xl tracking-tight text-white/90 hover:text-white transition-colors duration-150 block"
+                  className="font-clash font-semibold text-5xl md:text-7xl text-white/90 hover:text-white transition-colors duration-150 block"
                   style={{ letterSpacing: '-0.02em' }}
                 >
                   {link.label}

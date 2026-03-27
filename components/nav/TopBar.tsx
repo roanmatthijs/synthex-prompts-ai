@@ -29,6 +29,8 @@ export function TopBar() {
           onClick={() => setNavOpen(v => !v)}
           aria-label={navOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={navOpen}
+          aria-controls="nav-overlay"
+          aria-haspopup="dialog"
           className="flex flex-col gap-[5px] p-2"
         >
           <span
