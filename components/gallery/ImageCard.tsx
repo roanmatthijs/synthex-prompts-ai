@@ -58,7 +58,7 @@ export function ImageCard({ post, onOpen, index }: Props) {
             className="w-full h-auto block"
             style={{
               display: 'block',
-              transform: hovered ? 'scale(1.05) rotate(1deg)' : 'scale(1) rotate(0deg)',
+              transform: hovered ? 'scale(1.12) rotate(2deg)' : 'scale(1) rotate(0deg)',
               transition: 'transform 0.8s cubic-bezier(.22,1,.36,1)',
               willChange: 'transform',
             }}

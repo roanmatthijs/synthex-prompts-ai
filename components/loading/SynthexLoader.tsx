@@ -14,9 +14,9 @@ interface Props {
   onComplete: () => void
 }
 
-const ASSEMBLE_FRAMES = 90
-const HOLD_FRAMES = 40
-const DISSOLVE_FRAMES = 30
+const ASSEMBLE_FRAMES = 160  // ~2.7s at 60fps
+const HOLD_FRAMES = 90       // ~1.5s hold
+const DISSOLVE_FRAMES = 60   // ~1s dissolve
 const PARTICLE_STEP = 4
 const PARTICLE_RADIUS = 1.5
 

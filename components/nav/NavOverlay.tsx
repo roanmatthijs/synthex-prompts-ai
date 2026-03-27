@@ -65,20 +65,22 @@ export function NavOverlay({ isOpen, onClose }: Props) {
           id="nav-overlay"
           className="fixed inset-0 z-40 flex items-center justify-center"
           style={{
-            background: 'rgba(5, 5, 16, 0.92)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
+            background: 'rgba(4, 4, 8, 0.94)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
           }}
           variants={overlayVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
+          onClick={onClose}
         >
           <motion.nav
             ref={navRef}
             variants={listVariants}
             aria-label="Main navigation"
             className="flex flex-col items-center gap-8 md:gap-10"
+            onClick={e => e.stopPropagation()}
           >
             {NAV_LINKS.map(link => (
               <motion.div key={link.href} variants={itemVariants}>
