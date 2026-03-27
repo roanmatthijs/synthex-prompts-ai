@@ -1,7 +1,7 @@
 // components/loading/LoadingGate.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { SynthexLoader } from './SynthexLoader'
 
 const SESSION_KEY = 'synthex-loaded'
@@ -15,14 +15,12 @@ export function LoadingGate() {
     }
   }, [])
 
+  const handleComplete = useCallback(() => {
+    sessionStorage.setItem(SESSION_KEY, '1')
+    setShow(false)
+  }, [])
+
   if (!show) return null
 
-  return (
-    <SynthexLoader
-      onComplete={() => {
-        sessionStorage.setItem(SESSION_KEY, '1')
-        setShow(false)
-      }}
-    />
-  )
+  return <SynthexLoader onComplete={handleComplete} />
 }
