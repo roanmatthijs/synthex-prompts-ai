@@ -9,14 +9,19 @@ export function AuroraBackground() {
     const el = ref.current
     if (!el) return
 
+    let timer: ReturnType<typeof setTimeout> | null = null
+
     const handlePulse = () => {
       el.classList.add('aurora-pulse')
-      const timer = setTimeout(() => el.classList.remove('aurora-pulse'), 700)
-      return () => clearTimeout(timer)
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(() => el.classList.remove('aurora-pulse'), 700)
     }
 
     window.addEventListener('aurora:pulse', handlePulse)
-    return () => window.removeEventListener('aurora:pulse', handlePulse)
+    return () => {
+      window.removeEventListener('aurora:pulse', handlePulse)
+      if (timer) clearTimeout(timer)
+    }
   }, [])
 
   return <div ref={ref} className="aurora-bg" aria-hidden="true" />
