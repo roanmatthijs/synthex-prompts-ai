@@ -1,9 +1,9 @@
-// app/layout.tsx
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { AuroraBackground } from '@/components/aurora/AuroraBackground'
 import { TopBar } from '@/components/nav/TopBar'
 import { LoadingGate } from '@/components/loading/LoadingGate'
+import { SmoothScroll } from '@/components/providers/SmoothScroll'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -18,9 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Synthex Prompts AI',
   },
-  twitter: {
-    card: 'summary_large_image',
-  },
+  twitter: { card: 'summary_large_image' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,10 +27,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <AuroraBackground />
         <LoadingGate />
-        <TopBar />
-        <main className="relative z-10 pt-16 min-h-screen">
-          {children}
-        </main>
+        <SmoothScroll>
+          <TopBar />
+          <main className="relative z-10">
+            {children}
+          </main>
+        </SmoothScroll>
         <Analytics />
       </body>
     </html>

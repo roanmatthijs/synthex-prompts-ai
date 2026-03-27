@@ -58,7 +58,7 @@ export function ImageModal({ post, onClose, allPosts: _allPosts }: Props) {
         exit="exit"
         transition={{ duration: 0.25 }}
         onClick={onClose}
-        style={{ background: 'rgba(5,5,16,0.85)', backdropFilter: 'blur(16px)' }}
+        style={{ background: 'rgba(4,4,8,0.88)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
         role="dialog"
         aria-modal="true"
         aria-label={`Image details: ${post.title}`}
@@ -105,13 +105,7 @@ export function ImageModal({ post, onClose, allPosts: _allPosts }: Props) {
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {post.tags.map(tag => (
-                  <span
-                    key={tag}
-                    className="text-xs px-3 py-1 rounded-full font-satoshi"
-                    style={{ background: 'rgba(124,58,237,0.25)', color: 'rgba(167,139,250,1)', border: '1px solid rgba(124,58,237,0.4)' }}
-                  >
-                    {tag}
-                  </span>
+                  <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
 
@@ -174,7 +168,7 @@ export function ImageModal({ post, onClose, allPosts: _allPosts }: Props) {
 
           {/* Related images */}
           {related.length > 0 && (
-            <div className="px-6 md:px-8 pb-8 pt-4" style={{ borderTop: '1px solid var(--border-glass)' }}>
+            <div className="px-6 md:px-8 pb-8 pt-4" style={{ borderTop: '1px solid var(--border)' }}>
               <p className="font-satoshi text-xs text-white/40 uppercase tracking-widest mb-4">Related</p>
               <div className="grid grid-cols-3 gap-3">
                 {related.map(r => (

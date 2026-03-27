@@ -1,29 +1,28 @@
 @import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap');
 @import "tailwindcss";
 
-/* ─── Tailwind v4 custom theme ───────────────────── */
+/* ─── Tailwind v4 theme ───────────────────────────── */
 @theme {
   --font-clash: 'Clash Display', sans-serif;
   --font-satoshi: 'Satoshi', sans-serif;
   --color-accent: #7c3aed;
   --color-accent-light: #a78bfa;
   --color-accent-cyan: #06b6d4;
-  --bg-glass-surface: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
 }
 
 /* ─── Design tokens ──────────────────────────────── */
 :root {
-  --bg-deep: #050510;
-  --bg-surface: rgba(255, 255, 255, 0.04);
-  --bg-surface-hover: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.10);
-  --border-glass-bright: rgba(255, 255, 255, 0.20);
+  --shell: #06060a;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.055);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.16);
+  --text-hi: rgba(255, 255, 255, 0.95);
+  --text-mid: rgba(255, 255, 255, 0.55);
+  --text-lo: rgba(255, 255, 255, 0.28);
   --accent: #7c3aed;
   --accent-light: #a78bfa;
-  --accent-cyan: #06b6d4;
-  --text-primary: rgba(255, 255, 255, 0.95);
-  --text-secondary: rgba(255, 255, 255, 0.60);
-  --text-muted: rgba(255, 255, 255, 0.35);
+  --cyan: #06b6d4;
 }
 
 /* ─── Reset ──────────────────────────────────────── */
@@ -35,72 +34,94 @@
 
 html {
   color-scheme: dark;
-  background-color: var(--bg-deep);
-  scroll-behavior: smooth;
+  background-color: var(--shell);
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
 }
 
 body {
   font-family: 'Satoshi', sans-serif;
-  color: var(--text-primary);
+  color: var(--text-hi);
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--shell);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Clash Display', sans-serif;
 }
 
-/* ─── Aurora background ──────────────────────────── */
+/* ─── Aurora ─────────────────────────────────────── */
 .aurora-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(120, 40, 200, 0.50) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 200, 220, 0.35) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 60% at 50% 20%, rgba(0, 100, 255, 0.30) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(200, 0, 150, 0.25) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(50, 255, 150, 0.20) 0%, transparent 60%),
-    #050510;
-  background-size: 200% 200%;
-  animation: aurora-shift 25s ease infinite;
+    radial-gradient(ellipse 90% 60% at 15% 35%, rgba(100, 30, 180, 0.28) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 85% 65%, rgba(0, 170, 200, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 70% at 50% 10%, rgba(0, 80, 220, 0.15) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 60% at 5%  85%, rgba(160, 0, 120, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 95% 15%, rgba(30, 200, 120, 0.10) 0%, transparent 65%),
+    var(--shell);
+  background-size: 220% 220%;
+  animation: aurora-shift 30s ease infinite;
   pointer-events: none;
   transition: filter 0.1s ease;
 }
 
 .aurora-bg.aurora-pulse {
-  animation: aurora-shift 25s ease infinite, aurora-copy-pulse 0.7s ease forwards;
+  animation: aurora-shift 30s ease infinite, aurora-copy-pulse 0.8s ease forwards;
 }
 
 @keyframes aurora-shift {
   0%   { background-position: 0% 50%;   filter: hue-rotate(0deg)   brightness(1);    }
-  33%  { background-position: 100% 30%; filter: hue-rotate(30deg)  brightness(1.05); }
-  66%  { background-position: 50% 100%; filter: hue-rotate(-20deg) brightness(0.95); }
+  33%  { background-position: 100% 30%; filter: hue-rotate(25deg)  brightness(1.04); }
+  66%  { background-position: 50% 100%; filter: hue-rotate(-15deg) brightness(0.97); }
   100% { background-position: 0% 50%;   filter: hue-rotate(0deg)   brightness(1);    }
 }
 
 @keyframes aurora-copy-pulse {
   0%   { filter: hue-rotate(0deg)  brightness(1)   saturate(1);   }
-  30%  { filter: hue-rotate(20deg) brightness(1.4) saturate(1.6); }
+  30%  { filter: hue-rotate(20deg) brightness(1.5) saturate(1.8); }
   100% { filter: hue-rotate(0deg)  brightness(1)   saturate(1);   }
 }
 
-/* ─── Glass card utility ─────────────────────────── */
+/* ─── Glass (modals / overlays only) ─────────────── */
 .glass {
-  background: var(--bg-surface);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-glass);
-  border-radius: 12px;
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .glass:hover {
-  background: var(--bg-surface-hover);
-  border-color: var(--border-glass-bright);
+  background: var(--surface-hover);
+  border-color: var(--border-bright);
 }
+
+/* ─── Tag chip ───────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(124, 58, 237, 0.18);
+  color: rgba(167, 139, 250, 0.9);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+
+/* ─── Custom scrollbar ───────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
 /* ─── Reduced motion ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
@@ -109,7 +130,5 @@ h1, h2, h3, h4, h5, h6 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .aurora-bg {
-    animation: none;
-  }
+  .aurora-bg { animation: none; }
 }

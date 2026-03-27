@@ -16,8 +16,8 @@ export function MasonryGrid({ posts }: Props) {
   return (
     <>
       <div
-        className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 px-4 md:px-8"
-        style={{ columnGap: '1rem' }}
+        className="columns-1 sm:columns-2 xl:columns-3"
+        style={{ columnGap: '12px', padding: '0 20px 80px' }}
       >
         {posts.map((post, i) => (
           <ImageCard key={post.id} post={post} onOpen={setSelected} index={i} />
