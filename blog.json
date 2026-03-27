@@ -1,0 +1,67 @@
+[
+  {
+    "id": "how-to-prompt-cinematic-portraits",
+    "title": "How to Prompt Cinematic Portraits in Midjourney v6",
+    "excerpt": "A step-by-step guide to crafting portrait prompts that consistently produce cinematic, high-impact results in Midjourney v6.1.",
+    "body": "# How to Prompt Cinematic Portraits in Midjourney v6\n\nGetting cinematic portraits from Midjourney consistently is one of those skills that seems mysterious at first, but once you understand the underlying prompt architecture, you can reproduce it reliably every time.\n\n## The Core Formula\n\nEvery cinematic portrait prompt I use follows this structure:\n\n```\n[subject description] + [lighting type] + [aesthetic/style reference] + [technical camera language] + [mood/atmosphere]\n```\n\n## Why Lighting is Everything\n\n- **Rembrandt lighting** - creates that classic triangle of light on the shadowed cheek\n- **Rim lighting** - a bright edge separating the subject from the background\n- **Golden hour** - warm, soft, directional, almost universally flattering\n\n## Sample Prompt\n\n```\nportrait of a young astronaut, intense gaze, glass helmet reflecting nebulae, rim lighting, cinematic sci-fi, 85mm lens, hyperrealistic photography, dramatic composition --ar 2:3 --v 6.1 --style raw --chaos 5\n```\n\nTry this prompt and iterate from there. Change the subject, swap the lighting type, and adjust --chaos between 5 and 25 to see the variation range.",
+    "tags": [
+      "tutorial",
+      "portrait",
+      "midjourney v6"
+    ],
+    "date": "2025-12-01",
+    "thumbnailUrl": "https://picsum.photos/seed/blog-portrait/800/450"
+  },
+  {
+    "id": "neon-deity-breakdown",
+    "title": "Prompt Breakdown: Neon Deity Portrait",
+    "excerpt": "Deconstructing every element of the Neon Deity prompt - from the biopunk concept to the final parameter choices that locked in the result.",
+    "body": "# Prompt Breakdown: Neon Deity Portrait\n\nThis post deconstructs the prompt behind one of my most-shared images.\n\n## The Final Prompt\n\n```\nportrait of a cyberpunk deity surrounded by glowing neon circuitry, biopunk aesthetic, ultra-detailed skin texture, dramatic volumetric lighting, floating holographic runes, deep space background --ar 3:4 --v 6.1 --style raw --chaos 15\n```\n\n## Breaking It Down\n\n**portrait of a cyberpunk deity** - deity signals Midjourney to add grandeur and scale to the face.\n\n**surrounded by glowing neon circuitry** - Glowing emphasizes light sources and improves lighting quality.\n\n**biopunk aesthetic** - Biopunk blends organic life with technology, making the image more distinctive.\n\n**ultra-detailed skin texture** - Counteracting the tendency to over-smooth faces.\n\n## Parameter Choices\n\n- **--ar 3:4** - Portrait orientation for a portrait subject.\n- **--style raw** - Avoids beauty-filter smoothing on the face.\n- **--chaos 15** - Enough variation for interesting results across 4 generations.",
+    "tags": [
+      "prompt breakdown",
+      "portrait",
+      "cyberpunk"
+    ],
+    "date": "2025-11-22",
+    "thumbnailUrl": "https://picsum.photos/seed/blog-neon/800/450"
+  },
+  {
+    "id": "mastering-chaos-parameter",
+    "title": "Mastering the --chaos Parameter",
+    "excerpt": "A practical guide to using --chaos values from 0 to 100, with real examples showing exactly how it affects output at each level.",
+    "body": "# Mastering the --chaos Parameter\n\n--chaos is one of the most misunderstood parameters in Midjourney.\n\n## What --chaos Does\n\n--chaos controls the variety between the 4 images in a generation. At --chaos 0, all 4 images are close interpretations of the same prompt. At --chaos 100, you get 4 completely different takes.\n\n## The Practical Scale\n\n**--chaos 0-5** - Use when you want tight consistency.\n\n**--chaos 10-20** - My default for exploration. Gives meaningful variation without losing coherence.\n\n**--chaos 25-50** - Use when not sure which direction to take a concept.\n\n**--chaos 50-100** - Great for breaking out of creative ruts.\n\n## Practical Workflow\n\n1. Start with --chaos 20 to find the most promising direction\n2. Once you have a direction, drop to --chaos 5 and iterate\n3. When a single image looks right, use Vary (Subtle) or Vary (Strong)",
+    "tags": [
+      "tutorial",
+      "parameters",
+      "midjourney"
+    ],
+    "date": "2025-11-10",
+    "thumbnailUrl": "https://picsum.photos/seed/blog-chaos/800/450"
+  },
+  {
+    "id": "aurora-cityscape-breakdown",
+    "title": "Prompt Breakdown: Aurora Cityscape",
+    "excerpt": "How I built the Aurora Cityscape prompt from scratch - the specific words that triggered the lighting response I was looking for.",
+    "body": "# Prompt Breakdown: Aurora Cityscape\n\n## The Final Prompt\n\n```\nfuturistic megacity skyline under aurora borealis, glass and steel towers reflecting multicolored northern lights, photorealistic, epic wide angle, golden hour atmospheric haze --ar 3:2 --v 6.1 --chaos 10\n```\n\n## The Concept\n\nI wanted to combine the scale of a sci-fi megacity with the ethereal quality of the northern lights.\n\n## How Each Element Contributes\n\n**futuristic megacity skyline** - Megacity implies scale, density, and near-future technology.\n\n**under aurora borealis** - Ensures Midjourney puts the aurora in the sky where it belongs.\n\n**glass and steel towers reflecting multicolored northern lights** - Forces aurora colors onto the buildings.\n\n**photorealistic** - Without this, Midjourney often goes toward illustrated styles.\n\n**golden hour atmospheric haze** - Contrasts beautifully with the cool aurora colors in the sky.",
+    "tags": [
+      "prompt breakdown",
+      "landscape",
+      "architecture"
+    ],
+    "date": "2025-10-30",
+    "thumbnailUrl": "https://picsum.photos/seed/blog-aurora/800/450"
+  },
+  {
+    "id": "aspect-ratios-complete-guide",
+    "title": "The Complete Guide to Aspect Ratios in Midjourney",
+    "excerpt": "Every aspect ratio I use, when I use it, and how the choice of ratio changes what Midjourney generates.",
+    "body": "# The Complete Guide to Aspect Ratios in Midjourney\n\nAspect ratio is the first parameter decision I make for every prompt.\n\n## My Go-To Ratios\n\n**--ar 1:1 (Square)** - Use for product-like shots, faces and busts, minimalist compositions.\n\n**--ar 3:4 or --ar 2:3 (Portrait)** - Use for full portraits, figures, fashion.\n\n**--ar 3:2 (Landscape)** - Use for general landscapes. The most cinematically neutral ratio.\n\n**--ar 16:9 (Widescreen)** - Use for cinematic sci-fi, space scenes, panoramic landscapes.\n\n## Matching Ratio to Platform\n\n- **Facebook post**: --ar 4:5 or --ar 1:1\n- **Facebook cover**: --ar 16:9\n- **Redbubble print**: --ar 2:3 or --ar 3:2\n- **PromptBase thumbnail**: --ar 1:1\n\n## One Rule\n\nAlways decide the ratio before you finalize the prompt.",
+    "tags": [
+      "tutorial",
+      "parameters",
+      "midjourney"
+    ],
+    "date": "2025-10-15",
+    "thumbnailUrl": "https://picsum.photos/seed/blog-ratios/800/450"
+  }
+]
