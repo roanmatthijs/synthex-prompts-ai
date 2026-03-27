@@ -1,5 +1,6 @@
 import { getAllPosts } from '@/lib/posts'
 import { MasonryGrid } from '@/components/gallery/MasonryGrid'
+import { RevealLine } from '@/components/hero/HeroText'
 
 export const metadata = {
   title: 'Synthex Prompts AI',
@@ -11,89 +12,100 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative flex flex-col justify-end"
-        style={{ minHeight: '90vh', padding: '0 20px 64px' }}
+        style={{ minHeight: '92svh', padding: '0 5vw 6vw' }}
       >
-        {/* Subtle horizontal rule */}
+        {/* Divider */}
         <div
-          className="absolute bottom-0 left-5 right-5"
-          style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }}
+          className="absolute bottom-0 left-0 right-0"
+          style={{ height: '1px', background: 'rgba(255,255,255,0.06)', margin: '0 5vw' }}
         />
 
-        <div style={{ maxWidth: '900px' }}>
-          <p
-            className="mb-4"
-            style={{
-              fontFamily: "'Satoshi', sans-serif",
-              fontSize: '12px',
-              fontWeight: 500,
-              letterSpacing: '0.2em',
-              color: 'rgba(255,255,255,0.35)',
-              textTransform: 'uppercase',
-            }}
-          >
-            AI Art & Prompts
+        {/* Eyebrow */}
+        <RevealLine delay={100} style={{ marginBottom: '2vw' }}>
+          <p style={{
+            fontFamily: "'Satoshi', sans-serif",
+            fontSize: '11px',
+            fontWeight: 500,
+            letterSpacing: '0.22em',
+            color: 'rgba(255,255,255,0.3)',
+            textTransform: 'uppercase',
+          }}>
+            AI Art — Every Prompt Included
           </p>
+        </RevealLine>
 
-          <h1
-            style={{
+        {/* Display headline — vw-scaled like the references */}
+        <div style={{ lineHeight: 0.9, letterSpacing: '-0.03em' }}>
+          <RevealLine delay={180}>
+            <h1 style={{
               fontFamily: "'Clash Display', sans-serif",
-              fontSize: 'clamp(52px, 9vw, 120px)',
+              fontSize: 'clamp(48px, 9.5vw, 140px)',
               fontWeight: 700,
-              lineHeight: 0.92,
-              letterSpacing: '-0.03em',
               color: 'rgba(255,255,255,0.95)',
-            }}
-          >
-            Synthex
-            <br />
-            <span style={{ color: 'rgba(255,255,255,0.4)' }}>Prompts AI</span>
-          </h1>
-
-          <p
-            className="mt-6"
-            style={{
-              fontFamily: "'Satoshi', sans-serif",
-              fontSize: '16px',
-              color: 'rgba(255,255,255,0.4)',
-              maxWidth: '420px',
-              lineHeight: 1.6,
-            }}
-          >
-            Every image. Every prompt. Exactly as generated.
-          </p>
+            }}>
+              Synthex
+            </h1>
+          </RevealLine>
+          <RevealLine delay={280}>
+            <h1 style={{
+              fontFamily: "'Clash Display', sans-serif",
+              fontSize: 'clamp(48px, 9.5vw, 140px)',
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.28)',
+            }}>
+              Prompts AI
+            </h1>
+          </RevealLine>
         </div>
 
-        {/* Scroll cue */}
+        {/* Sub line */}
+        <RevealLine delay={420} style={{ marginTop: '3vw' }}>
+          <p style={{
+            fontFamily: "'Satoshi', sans-serif",
+            fontSize: 'clamp(14px, 1.1vw, 18px)',
+            color: 'rgba(255,255,255,0.38)',
+            maxWidth: '380px',
+            lineHeight: 1.65,
+          }}>
+            Midjourney-generated art with the full prompt and parameters behind every image.
+          </p>
+        </RevealLine>
+
+        {/* Scroll cue — vertical text right side */}
         <div
-          className="absolute right-8 bottom-8 flex flex-col items-center gap-2"
-          style={{ color: 'rgba(255,255,255,0.2)' }}
+          className="absolute"
+          style={{
+            right: '5vw',
+            bottom: '6vw',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px',
+          }}
         >
-          <span
-            style={{
-              fontFamily: "'Satoshi', sans-serif",
-              fontSize: '10px',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              writingMode: 'vertical-rl',
-            }}
-          >
+          <span style={{
+            fontFamily: "'Satoshi', sans-serif",
+            fontSize: '10px',
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            color: 'rgba(255,255,255,0.18)',
+            writingMode: 'vertical-rl',
+          }}>
             Scroll
           </span>
-          <div
-            style={{
-              width: '1px',
-              height: '48px',
-              background: 'linear-gradient(to bottom, rgba(255,255,255,0.2), transparent)',
-            }}
-          />
+          <div style={{
+            width: '1px',
+            height: '56px',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.18), transparent)',
+          }} />
         </div>
       </section>
 
-      {/* Gallery */}
-      <section style={{ paddingTop: '60px' }}>
+      {/* ── Gallery ───────────────────────────────────── */}
+      <section style={{ paddingTop: '80px' }}>
         <MasonryGrid posts={posts} />
       </section>
     </>

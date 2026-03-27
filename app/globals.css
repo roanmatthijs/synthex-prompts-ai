@@ -117,11 +117,14 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(124, 58, 237, 0.25);
 }
 
-/* ─── Custom scrollbar ───────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+/* ─── Hide scrollbar (premium — Immersive-G technique) ── */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+
+/* ─── Hide default cursor on desktop — custom cursor takes over ── */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
 
 /* ─── Reduced motion ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

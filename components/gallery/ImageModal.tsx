@@ -6,7 +6,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Post } from '@/lib/posts'
-import { getRelatedPosts } from '@/lib/posts'
 
 interface Props {
   post: Post
@@ -20,9 +19,8 @@ const overlayVariants = {
   exit: { opacity: 0 },
 }
 
-export function ImageModal({ post, onClose, allPosts: _allPosts }: Props) {
+export function ImageModal({ post, onClose }: Omit<Props, 'allPosts'> & { allPosts?: Post[] }) {
   const [copied, setCopied] = useState(false)
-  const related = getRelatedPosts(post)
 
   // Close on Escape
   useEffect(() => {
@@ -166,23 +164,6 @@ export function ImageModal({ post, onClose, allPosts: _allPosts }: Props) {
             </div>
           </div>
 
-          {/* Related images */}
-          {related.length > 0 && (
-            <div className="px-6 md:px-8 pb-8 pt-4" style={{ borderTop: '1px solid var(--border)' }}>
-              <p className="font-satoshi text-xs text-white/40 uppercase tracking-widest mb-4">Related</p>
-              <div className="grid grid-cols-3 gap-3">
-                {related.map(r => (
-                  <div
-                    key={r.id}
-                    className="relative aspect-square rounded-lg overflow-hidden cursor-pointer"
-                    onClick={() => {/* handled by parent, TODO: navigate to related */}}
-                  >
-                    <Image src={r.imageUrl} alt={r.title} fill className="object-cover hover:scale-105 transition-transform duration-300" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>

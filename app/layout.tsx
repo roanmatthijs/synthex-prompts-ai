@@ -4,6 +4,7 @@ import { AuroraBackground } from '@/components/aurora/AuroraBackground'
 import { TopBar } from '@/components/nav/TopBar'
 import { LoadingGate } from '@/components/loading/LoadingGate'
 import { SmoothScroll } from '@/components/providers/SmoothScroll'
+import { CustomCursor } from '@/components/cursor/CustomCursor'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <AuroraBackground />
         <LoadingGate />
+        <CustomCursor />
         <SmoothScroll>
           <TopBar />
           <main className="relative z-10">
