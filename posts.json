@@ -1,0 +1,112 @@
+[
+  {
+    "id": "neon-deity-portrait",
+    "title": "Neon Deity Portrait",
+    "imageUrl": "https://picsum.photos/seed/neon-deity/800/1100",
+    "prompt": "portrait of a cyberpunk deity surrounded by glowing neon circuitry, biopunk aesthetic, ultra-detailed skin texture, dramatic volumetric lighting, floating holographic runes, deep space background",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 3:4 --v 6.1 --style raw --chaos 15",
+    "tags": ["portrait", "cyberpunk", "neon"],
+    "date": "2025-11-20",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "aurora-cityscape",
+    "title": "Aurora Cityscape",
+    "imageUrl": "https://picsum.photos/seed/aurora-city/1200/800",
+    "prompt": "futuristic megacity skyline under aurora borealis, glass and steel towers reflecting multicolored northern lights, photorealistic, epic wide angle, golden hour atmospheric haze",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 3:2 --v 6.1 --chaos 10",
+    "tags": ["landscape", "architecture", "neon"],
+    "date": "2025-11-18",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "quantum-forest",
+    "title": "Quantum Forest",
+    "imageUrl": "https://picsum.photos/seed/quantum-forest/900/1200",
+    "prompt": "ancient forest where trees grow from glowing quantum circuitry, bioluminescent moss, fractal branches dissolving into data streams, ethereal mist, god rays through digital canopy",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 3:4 --v 6.1 --style raw --chaos 25",
+    "tags": ["nature", "abstract", "cyberpunk"],
+    "date": "2025-11-15",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "chrome-oracle",
+    "title": "Chrome Oracle",
+    "imageUrl": "https://picsum.photos/seed/chrome-oracle/800/800",
+    "prompt": "chrome-plated oracle figure with fluid mercury skin, reflective surfaces showing parallel universes, minimalist composition, studio lighting, hyperrealistic",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 1:1 --v 6.1 --style raw",
+    "tags": ["portrait", "abstract"],
+    "date": "2025-11-12",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "void-archipelago",
+    "title": "Void Archipelago",
+    "imageUrl": "https://picsum.photos/seed/void-arch/1400/700",
+    "prompt": "floating island archipelago suspended in a violet void, waterfalls cascading into nothingness, crystal formations, ancient stone bridges, dramatic volumetric clouds, fantasy epic landscape",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 2:1 --v 6.1 --chaos 20",
+    "tags": ["landscape", "abstract", "nature"],
+    "date": "2025-11-10",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "signal-bloom",
+    "title": "Signal Bloom",
+    "imageUrl": "https://picsum.photos/seed/signal-bloom/800/1050",
+    "prompt": "macro photograph of a flower constructed from fiber optic cables and signal transmitters, data bursts as pollen, photorealistic macro lens, dark background, vivid saturated colors",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 4:5 --v 6.1 --style raw --chaos 5",
+    "tags": ["nature", "abstract", "neon"],
+    "date": "2025-11-08",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "ghost-in-the-mesh",
+    "title": "Ghost in the Mesh",
+    "imageUrl": "https://picsum.photos/seed/ghost-mesh/800/1100",
+    "prompt": "translucent human silhouette made of wireframe mesh dissolving into glowing particles, dark atmospheric background, cyberpunk dystopia, long exposure light trails, cinematic",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 3:4 --v 6.1 --chaos 30",
+    "tags": ["portrait", "abstract", "cyberpunk"],
+    "date": "2025-11-05",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "cathedral-of-code",
+    "title": "Cathedral of Code",
+    "imageUrl": "https://picsum.photos/seed/cathedral-code/900/1300",
+    "prompt": "gothic cathedral interior where stained glass windows display cascading code, pews made of server racks, digital monks in prayer, volumetric light through data streams, ultra-detailed architectural rendering",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 9:13 --v 6.1 --style raw",
+    "tags": ["architecture", "cyberpunk", "abstract"],
+    "date": "2025-11-01",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "bioluminescent-deep",
+    "title": "Bioluminescent Deep",
+    "imageUrl": "https://picsum.photos/seed/bio-deep/1100/800",
+    "prompt": "deep sea creature with bioluminescent patterns swimming through an alien ocean, vibrant blues and greens, photorealistic underwater photography, extreme detail, cosmic scale",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 11:8 --v 6.1 --chaos 15",
+    "tags": ["nature", "abstract"],
+    "date": "2025-10-28",
+    "facebookUrl": "#"
+  },
+  {
+    "id": "the-last-meridian",
+    "title": "The Last Meridian",
+    "imageUrl": "https://picsum.photos/seed/last-meridian/800/450",
+    "prompt": "lone figure standing at the edge of a shattered planet, looking toward a binary star system, cinematic sci-fi, desolate beauty, dust and debris in atmosphere, epic scale, Terrence Malick aesthetic",
+    "model": "Midjourney v6.1",
+    "parameters": "--ar 16:9 --v 6.1 --style raw --chaos 12",
+    "tags": ["landscape", "portrait"],
+    "date": "2025-10-25",
+    "facebookUrl": "#"
+  }
+]
